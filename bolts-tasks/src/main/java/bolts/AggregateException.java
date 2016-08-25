@@ -54,7 +54,7 @@ public class AggregateException extends Exception {
   public AggregateException(String detailMessage, List<? extends Throwable> innerThrowables) {
     super(detailMessage,
         innerThrowables != null && innerThrowables.size() > 0 ? innerThrowables.get(0) : null);
-    this.innerThrowables = Collections.unmodifiableList(innerThrowables);
+    this.innerThrowables = Collections.<Throwable>unmodifiableList(innerThrowables);
   }
 
   /**
